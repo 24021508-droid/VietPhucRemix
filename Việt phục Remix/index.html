@@ -1,0 +1,658 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hồn Cốt Truyền Thống – Style Hiện Đại | Việt Phục Remix</title>
+  <meta name="description"
+    content="Khám phá và phối đồ trang phục truyền thống Việt Nam theo phong cách hiện đại. Cũ mà mới, truyền thống nhưng hiện đại." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== AMBIENT PARTICLES ===== -->
+  <div class="ambient-bg">
+    <div class="particle" style="--x:10%;--y:20%;--size:3px;--dur:8s;--delay:0s"></div>
+    <div class="particle" style="--x:25%;--y:60%;--size:2px;--dur:12s;--delay:1s"></div>
+    <div class="particle" style="--x:70%;--y:15%;--size:4px;--dur:9s;--delay:2s"></div>
+    <div class="particle" style="--x:85%;--y:70%;--size:2px;--dur:11s;--delay:0.5s"></div>
+    <div class="particle" style="--x:50%;--y:85%;--size:3px;--dur:7s;--delay:3s"></div>
+    <div class="particle" style="--x:40%;--y:40%;--size:2px;--dur:14s;--delay:1.5s"></div>
+    <div class="particle" style="--x:90%;--y:30%;--size:3px;--dur:10s;--delay:4s"></div>
+    <div class="particle" style="--x:15%;--y:80%;--size:2px;--dur:13s;--delay:2.5s"></div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-area" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="logo-mark">VR</div>
+        <div class="logo-text">
+          <span class="logo-main">VIỆT PHỤC REMIX</span>
+          <span class="logo-sub">TRUYỀN THỐNG THEO CÁCH CỦA BẠN</span>
+        </div>
+      </div>
+      <nav class="site-nav">
+        <a href="#explore" class="nav-link active">KHÁM PHÁ</a>
+        <a href="#wizardSection" class="nav-link">REMIX STUDIO</a>
+        <a href="#gallerySection" class="nav-link">LOOKBOOK</a>
+        <a href="#about" class="nav-link">VỀ DỰ ÁN</a>
+      </nav>
+      <button class="header-cta"
+        onclick="document.getElementById('wizardSection')?.scrollIntoView({ behavior: 'smooth' })">
+        REMIX NGAY &rarr;
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero-section" id="explore">
+    <div class="hero-banner-container">
+      <img src="assets/images/hero_banner.jpg" alt="Việt Phục Remix Editorial Banner" class="hero-bg-banner" />
+      <div class="hero-banner-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-subtag">VIETNAMESE HERITAGE · REMIXED</span>
+      <h1 class="hero-title">
+        <span class="title-main">VIỆT PHỤC</span>
+        <span class="title-remix">REMIX</span>
+      </h1>
+      <p class="hero-slogan">Truyền thống theo cách của bạn.</p>
+      <button class="hero-cta" id="startBtn"
+        onclick="document.getElementById('wizardSection')?.scrollIntoView({ behavior: 'smooth' })">
+        KHÁM PHÁ NGAY &rarr;
+      </button>
+    </div>
+    <div class="hero-bottom-bar">
+      <div class="scroll-indicator"
+        onclick="document.getElementById('wizardSection')?.scrollIntoView({ behavior: 'smooth' })">
+        <span class="scroll-pill">0</span> SCROLL ĐỂ KHÁM PHÁ
+      </div>
+      <div class="hero-footer-tagline">
+        Ba miền · Một bản sắc · Vô vàn cách thể hiện
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN APP WIZARD ===== -->
+  <main class="app-main" id="wizardSection">
+
+    <!-- Step Progress -->
+    <div class="step-progress">
+      <div class="step-item active" data-step="1" id="stepIndicator1" onclick="goToStep(1)"
+        title="Bước 1: Chọn trang phục">
+        <div class="step-dot"><span>01</span></div>
+        <span class="step-label">Loại trang phục</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" data-step="2" id="stepIndicator2" onclick="goToStep(2)"
+        title="Bước 2: Chọn màu sắc & phong cách">
+        <div class="step-dot"><span>02</span></div>
+        <span class="step-label">Màu sắc & Phong cách</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" data-step="3" id="stepIndicator3" onclick="goToStep(3)" title="Bước 3: Chọn phụ kiện">
+        <div class="step-dot"><span>03</span></div>
+        <span class="step-label">Phụ kiện</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" data-step="4" id="stepIndicator4" onclick="goToStep(4)" title="Bước 4: Xem kết quả">
+        <div class="step-dot"><span>04</span></div>
+        <span class="step-label">Kết quả</span>
+      </div>
+    </div>
+
+    <!-- ===== STEP 1: OUTFIT TYPE ===== -->
+    <section class="wizard-step active" id="step1">
+      <div class="step-header">
+        <h2>Chọn loại trang phục</h2>
+        <p>Bắt đầu hành trình bằng việc lựa chọn trang phục bạn muốn phối đồ</p>
+      </div>
+
+      <div class="outfit-grid" id="outfitTab">
+        <div class="outfit-card" id="card-ao-dai" onclick="selectOutfit('Áo Dài', 'ao-dai')">
+          <div class="outfit-card-visual ao-dai-visual">
+            <svg viewBox="0 0 120 200" class="outfit-mini-svg">
+              <defs>
+                <linearGradient id="og1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#C0392B" />
+                  <stop offset="100%" stop-color="#8B1A2F" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="60" cy="22" rx="13" ry="16" fill="#F4D9C0" />
+              <ellipse cx="60" cy="16" rx="13" ry="10" fill="#2c1000" />
+              <path
+                d="M38 42 Q60 40 82 42 L88 120 Q84 140 82 190 L70 190 Q65 155 60 130 Q55 155 50 190 L38 190 L36 140 Q32 120 32 120Z"
+                fill="url(#og1)" />
+              <path d="M38 42 Q28 52 20 65 Q16 75 18 83 Q24 85 30 80 Q36 70 38 62Z" fill="url(#og1)" />
+              <path d="M82 42 Q92 52 100 65 Q104 75 102 83 Q96 85 90 80 Q84 70 82 62Z" fill="url(#og1)" />
+              <path d="M50 42 Q60 37 70 42 L72 52 Q65 49 60 51 Q55 49 48 52Z" fill="#D4AF6E" />
+            </svg>
+          </div>
+          <div class="outfit-card-info">
+            <h3>Áo Dài</h3>
+            <p>Quốc phục Việt Nam, thanh lịch và hiện đại</p>
+            <div class="card-tags">
+              <span class="tag">Nữ & Nam</span>
+              <span class="tag">Lễ hội</span>
+              <span class="tag">Hàng ngày</span>
+            </div>
+          </div>
+          <div class="card-select-icon">+</div>
+        </div>
+
+        <div class="outfit-card" id="card-ao-tu-than" onclick="selectOutfit('Áo Tứ Thân', 'ao-tu-than')">
+          <div class="outfit-card-visual ao-tu-visual">
+            <svg viewBox="0 0 120 200" class="outfit-mini-svg">
+              <defs>
+                <linearGradient id="og2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#2C5F8A" />
+                  <stop offset="100%" stop-color="#1A3A5C" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="60" cy="22" rx="13" ry="16" fill="#F4D9C0" />
+              <ellipse cx="60" cy="16" rx="13" ry="10" fill="#1a0a00" />
+              <circle cx="60" cy="12" r="8" fill="#2c1000" />
+              <circle cx="60" cy="6" r="5" fill="#1a0a00" />
+              <path d="M38 42 Q60 38 82 42 L86 110 L90 185 L78 185 L72 145 L60 125 L48 145 L42 185 L30 185 L34 110Z"
+                fill="url(#og2)" />
+              <path d="M50 42 Q60 39 70 42 L75 110 L60 125 L45 110Z" fill="#3A7AA8" opacity="0.6" />
+              <rect x="40" y="90" width="40" height="8" rx="2" fill="#D4AF6E" />
+              <path d="M60 98 L55 115 M60 98 L65 115" stroke="#D4AF6E" stroke-width="2" fill="none" />
+              <path d="M38 42 Q28 52 20 68 Q18 76 22 82 Q28 84 34 78 Q38 68 38 58Z" fill="url(#og2)" />
+              <path d="M82 42 Q92 52 100 68 Q102 76 98 82 Q92 84 86 78 Q82 68 82 58Z" fill="url(#og2)" />
+            </svg>
+          </div>
+          <div class="outfit-card-info">
+            <h3>Áo Tứ Thân</h3>
+            <p>Trang phục dân gian Bắc Bộ truyền thống</p>
+            <div class="card-tags">
+              <span class="tag">Nữ</span>
+              <span class="tag">Dân gian</span>
+              <span class="tag">Lễ hội</span>
+            </div>
+          </div>
+          <div class="card-select-icon">+</div>
+        </div>
+
+        <div class="outfit-card" id="card-nhat-binh" onclick="selectOutfit('Nhật Bình', 'nhat-binh')">
+          <div class="outfit-card-visual nhat-binh-visual">
+            <svg viewBox="0 0 120 200" class="outfit-mini-svg">
+              <defs>
+                <linearGradient id="og3" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#1B5E3B" />
+                  <stop offset="100%" stop-color="#0D3B22" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="60" cy="22" rx="13" ry="16" fill="#F4D9C0" />
+              <ellipse cx="60" cy="15" rx="14" ry="10" fill="#1a0a00" />
+              <rect x="50" y="5" width="20" height="10" rx="2" fill="#8B1A2F" />
+              <path d="M52 5 L58 1 L60 5 L62 1 L68 5" stroke="#D4AF6E" stroke-width="1.5" fill="none" />
+              <circle cx="60" cy="4" r="2" fill="#F5D98B" />
+              <path d="M30 42 Q60 36 90 42 L96 130 L96 185 L24 185 L24 130Z" fill="url(#og3)" />
+              <path d="M40 42 L60 68 L80 42" fill="#D4AF6E" opacity="0.5" />
+              <path d="M42 42 L60 65 L78 42" stroke="#F5D98B" stroke-width="1.5" fill="none" />
+              <rect x="46" y="80" width="28" height="24" rx="2" fill="none" stroke="#D4AF6E" stroke-width="1.2" />
+              <circle cx="60" cy="92" r="8" fill="none" stroke="#F5D98B" stroke-width="0.8" />
+              <path d="M54 92 L66 92 M60 86 L60 98" stroke="#D4AF6E" stroke-width="0.8" />
+              <path d="M50 125 Q55 118 60 125 Q65 118 70 125" stroke="#D4AF6E" stroke-width="1" fill="none"
+                opacity="0.7" />
+              <path d="M30 42 L90 42" stroke="#D4AF6E" stroke-width="1.5" opacity="0.8" />
+              <path d="M24 185 L96 185" stroke="#D4AF6E" stroke-width="2" opacity="0.8" />
+              <path d="M30 42 Q10 60 8 90 Q6 108 15 115 Q25 118 30 108 Q34 90 36 70Z" fill="url(#og3)" />
+              <path d="M90 42 Q110 60 112 90 Q114 108 105 115 Q95 118 90 108 Q86 90 84 70Z" fill="url(#og3)" />
+              <path d="M8 90 L30 108" stroke="#D4AF6E" stroke-width="1" opacity="0.6" />
+              <path d="M112 90 L90 108" stroke="#D4AF6E" stroke-width="1" opacity="0.6" />
+            </svg>
+          </div>
+          <div class="outfit-card-info">
+            <h3>Nhật Bình</h3>
+            <p>Lễ phục cung đình Huế hoàng gia</p>
+            <div class="card-tags">
+              <span class="tag">Hoàng gia</span>
+              <span class="tag">Cung đình</span>
+              <span class="tag">Lễ trọng</span>
+            </div>
+          </div>
+          <div class="card-select-icon">+</div>
+        </div>
+
+        <div class="outfit-card" id="card-ao-giao-linh" onclick="selectOutfit('Áo Giao Lĩnh', 'ao-giao-linh')">
+          <div class="outfit-card-visual giao-linh-visual">
+            <svg viewBox="0 0 120 200" class="outfit-mini-svg">
+              <defs>
+                <linearGradient id="og4" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#7B3F00" />
+                  <stop offset="100%" stop-color="#4A2500" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="60" cy="22" rx="13" ry="16" fill="#F4D9C0" />
+              <ellipse cx="60" cy="15" rx="13" ry="10" fill="#1a0a00" />
+              <circle cx="60" cy="8" r="6" fill="#2c1000" />
+              <path d="M54 8 Q60 2 66 8" stroke="#D4AF6E" stroke-width="1" fill="none" />
+              <path d="M28 42 Q60 36 92 42 L100 180 L20 180Z" fill="url(#og4)" />
+              <path d="M38 42 L60 72 L82 42" fill="#5C2E00" opacity="0.8" />
+              <path d="M40 42 L60 70 L80 42" stroke="#D4AF6E" stroke-width="1.5" fill="none" />
+              <ellipse cx="60" cy="105" rx="22" ry="5" fill="#D4AF6E" opacity="0.7" />
+              <rect x="44" y="175" width="12" height="5" rx="1" fill="#1A2040" />
+              <rect x="64" y="175" width="12" height="5" rx="1" fill="#1A2040" />
+              <path d="M28 42 Q12 55 8 78 Q6 92 12 98 Q20 102 26 94 Q30 80 32 65Z" fill="url(#og4)" />
+              <path d="M92 42 Q108 55 112 78 Q114 92 108 98 Q100 102 94 94 Q90 80 88 65Z" fill="url(#og4)" />
+              <circle cx="60" cy="130" r="6" fill="none" stroke="#D4AF6E" stroke-width="0.8" opacity="0.6" />
+              <path d="M50 145 Q60 140 70 145" stroke="#D4AF6E" stroke-width="0.8" fill="none" opacity="0.5" />
+            </svg>
+          </div>
+          <div class="outfit-card-info">
+            <h3>Áo Giao Lĩnh</h3>
+            <p>Trang phục cổ truyền thời Lê - Nguyễn</p>
+            <div class="card-tags">
+              <span class="tag">Unisex</span>
+              <span class="tag">Cổ đại</span>
+              <span class="tag">Phong trào</span>
+            </div>
+          </div>
+          <div class="card-select-icon">+</div>
+        </div>
+
+        <div class="outfit-card" id="card-ao-ba-ba" onclick="selectOutfit('Áo Bà Ba', 'ao-ba-ba')">
+          <div class="outfit-card-visual ba-ba-visual">
+            <svg viewBox="0 0 120 200" class="outfit-mini-svg">
+              <defs>
+                <linearGradient id="og5" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#2E8B6E" />
+                  <stop offset="100%" stop-color="#1A5C47" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="60" cy="22" rx="13" ry="16" fill="#F4D9C0" />
+              <ellipse cx="60" cy="15" rx="13" ry="10" fill="#2c1000" />
+              <path d="M40 42 Q60 40 80 42 L84 120 L84 180 L36 180 L36 120Z" fill="url(#og5)" />
+              <line x1="60" y1="42" x2="60" y2="120" stroke="#fff" stroke-width="1" opacity="0.4" />
+              <circle cx="60" cy="58" r="2" fill="#fff" opacity="0.6" />
+              <circle cx="60" cy="72" r="2" fill="#fff" opacity="0.6" />
+              <circle cx="60" cy="86" r="2" fill="#fff" opacity="0.6" />
+              <circle cx="60" cy="100" r="2" fill="#fff" opacity="0.6" />
+              <path d="M48 42 Q60 38 72 42 L70 50 Q62 47 60 49 Q58 47 50 50Z" fill="#D4AF6E" opacity="0.5" />
+              <path d="M40 42 Q30 48 25 60 Q22 70 25 76 Q30 78 36 72 Q38 62 40 56Z" fill="url(#og5)" />
+              <path d="M80 42 Q90 48 95 60 Q98 70 95 76 Q90 78 84 72 Q82 62 80 56Z" fill="url(#og5)" />
+              <path d="M36 180 L28 200 L48 200 L60 170 L72 200 L92 200 L84 180Z" fill="#1A2040" />
+              <line x1="48" y1="200" x2="42" y2="180" stroke="#fff" stroke-width="1" opacity="0.3" />
+            </svg>
+          </div>
+          <div class="outfit-card-info">
+            <h3>Áo Bà Ba</h3>
+            <p>Hồn quê Nam Bộ, mộc mạc và tinh tế</p>
+            <div class="card-tags">
+              <span class="tag">Nam & Nữ</span>
+              <span class="tag">Nam Bộ</span>
+              <span class="tag">Casual</span>
+            </div>
+          </div>
+          <div class="card-select-icon">+</div>
+        </div>
+
+        <div class="outfit-card" id="card-ao-the-cach-mang" onclick="selectOutfit('Áo Ngũ Thân', 'ao-ngu-than')">
+          <div class="outfit-card-visual ngu-than-visual">
+            <svg viewBox="0 0 120 200" class="outfit-mini-svg">
+              <defs>
+                <linearGradient id="og6" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#4A1880" />
+                  <stop offset="100%" stop-color="#2D0F50" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="60" cy="22" rx="13" ry="16" fill="#F4D9C0" />
+              <ellipse cx="60" cy="14" rx="13" ry="10" fill="#1a0a00" />
+              <rect x="48" y="6" width="24" height="8" rx="1" fill="#1a0a00" />
+              <rect x="44" y="4" width="32" height="4" rx="1" fill="#2c1500" />
+              <path d="M32 42 Q60 36 88 42 L94 175 L26 175Z" fill="url(#og6)" />
+              <path d="M52 42 L52 100 Q56 105 60 100 Q64 105 68 100 L68 42" fill="#380D66" opacity="0.5" />
+              <rect x="52" y="38" width="16" height="8" rx="3" fill="url(#og6)" />
+              <rect x="54" y="38" width="12" height="7" rx="2" fill="#5A2099" opacity="0.8" />
+              <circle cx="60" cy="55" r="2.5" fill="#D4AF6E" opacity="0.8" />
+              <circle cx="60" cy="68" r="2.5" fill="#D4AF6E" opacity="0.8" />
+              <circle cx="60" cy="81" r="2.5" fill="#D4AF6E" opacity="0.8" />
+              <path d="M32 42 Q15 58 10 82 Q8 97 14 104 Q22 108 28 100 Q32 86 34 68Z" fill="url(#og6)" />
+              <path d="M88 42 Q105 58 110 82 Q112 97 106 104 Q98 108 92 100 Q88 86 86 68Z" fill="url(#og6)" />
+              <path d="M10 82 L28 100" stroke="#D4AF6E" stroke-width="1" opacity="0.6" />
+              <path d="M110 82 L92 100" stroke="#D4AF6E" stroke-width="1" opacity="0.6" />
+              <line x1="26" y1="175" x2="94" y2="175" stroke="#D4AF6E" stroke-width="1.5" opacity="0.7" />
+            </svg>
+          </div>
+          <div class="outfit-card-info">
+            <h3>Áo Ngũ Thân</h3>
+            <p>Trang phục nam truyền thống thời Nguyễn</p>
+            <div class="card-tags">
+              <span class="tag">Nam</span>
+              <span class="tag">Phục hưng</span>
+              <span class="tag">Thanh lịch</span>
+            </div>
+          </div>
+          <div class="card-select-icon">+</div>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button class="btn-next" id="nextStep1" onclick="goToStep(2)" style="display:none">Tiếp theo ➔</button>
+      </div>
+    </section>
+
+    <!-- ===== STEP 2: COLOR & STYLE ===== -->
+    <section class="wizard-step" id="step2">
+      <div class="step-header">
+        <h2>Chọn sắc thái &amp; sự kiện</h2>
+        <p>Tự do chọn màu sắc, phong cách và sự kiện sử dụng (tùy chọn)</p>
+      </div>
+
+      <!-- Top bar: Gender + Event (optional) -->
+      <div class="step2-topbar">
+        <div class="gender-section">
+          <h3 class="section-sub-title">👤 Giới tính</h3>
+          <div class="gender-toggle">
+            <button class="gender-btn active" id="gender-nu" onclick="selectGender('nu')">
+              <span class="gender-icon">♀️</span> Nữ
+            </button>
+            <button class="gender-btn" id="gender-nam" onclick="selectGender('nam')">
+              <span class="gender-icon">♂️</span> Nam
+            </button>
+          </div>
+        </div>
+
+        <div class="event-section">
+          <h3 class="section-sub-title">🎉 Sự kiện / Bối cảnh <span class="optional-tag">(Tùy chọn)</span></h3>
+          <div class="event-chips" id="eventChips">
+            <button type="button" class="event-chip active" id="ev-chip-none" onclick="selectOptionalEvent('', this)">🚫
+              Không chọn</button>
+            <button type="button" class="event-chip" id="ev-chip-tet"
+              onclick="selectOptionalEvent('Tết Nguyên Đán', this)">🎊 Tết</button>
+            <button type="button" class="event-chip" id="ev-chip-cuoi"
+              onclick="selectOptionalEvent('Đám cưới', this)">💒 Đám Cưới</button>
+            <button type="button" class="event-chip" id="ev-chip-chua"
+              onclick="selectOptionalEvent('Đi Chùa / Lễ hội', this)">🏯 Chùa / Lễ Hội</button>
+            <button type="button" class="event-chip" id="ev-chip-totnghiep"
+              onclick="selectOptionalEvent('Tốt nghiệp', this)">🎓 Tốt Nghiệp</button>
+            <button type="button" class="event-chip" id="ev-chip-kyyeu"
+              onclick="selectOptionalEvent('Chụp ảnh kỷ yếu', this)">📸 Kỷ Yếu</button>
+            <button type="button" class="event-chip" id="ev-chip-cafe"
+              onclick="selectOptionalEvent('Dạo phố cà phê', this)">☕ Cà Phê</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="step2-body">
+        <!-- Left: Selectors -->
+        <div class="step2-selectors">
+          <div class="color-section">
+            <h3 class="section-sub-title">🎨 Bảng màu truyền thống</h3>
+            <div class="color-palette">
+              <button class="color-swatch" id="color-do" style="--clr:#C0392B"
+                onclick="selectColor('#C0392B','Đỏ son','do')" title="Đỏ Son">
+                <div class="swatch-dot"></div><span>Đỏ Son</span>
+              </button>
+              <button class="color-swatch" id="color-vang" style="--clr:#D4AF6E"
+                onclick="selectColor('#D4AF6E','Vàng hoàng kim','vang')" title="Vàng Hoàng Kim">
+                <div class="swatch-dot"></div><span>Vàng Hoàng Kim</span>
+              </button>
+              <button class="color-swatch" id="color-lam" style="--clr:#2C5F8A"
+                onclick="selectColor('#2C5F8A','Lam ngọc','lam')" title="Lam Ngọc">
+                <div class="swatch-dot"></div><span>Lam Ngọc</span>
+              </button>
+              <button class="color-swatch" id="color-xanh-la" style="--clr:#1B5E3B"
+                onclick="selectColor('#1B5E3B','Xanh ngọc bích','xanh-la')" title="Xanh Ngọc Bích">
+                <div class="swatch-dot"></div><span>Xanh Ngọc Bích</span>
+              </button>
+              <button class="color-swatch" id="color-tim" style="--clr:#5D2D8E"
+                onclick="selectColor('#5D2D8E','Tím cổ điển','tim')" title="Tím Cổ Điển">
+                <div class="swatch-dot"></div><span>Tím Cổ Điển</span>
+              </button>
+              <button class="color-swatch" id="color-trang" style="--clr:#F5F0E8"
+                onclick="selectColor('#F5F0E8','Trắng ngà','trang')" title="Trắng Ngà">
+                <div class="swatch-dot" style="border:1px solid #ccc"></div><span>Trắng Ngà</span>
+              </button>
+              <button class="color-swatch" id="color-den" style="--clr:#1C1C2E"
+                onclick="selectColor('#1C1C2E','Đen huyền','den')" title="Đen Huyền">
+                <div class="swatch-dot"></div><span>Đen Huyền</span>
+              </button>
+              <button class="color-swatch" id="color-hong" style="--clr:#E8A0AE"
+                onclick="selectColor('#E8A0AE','Hồng đào','hong')" title="Hồng Đào">
+                <div class="swatch-dot"></div><span>Hồng Đào</span>
+              </button>
+              <button class="color-swatch" id="color-nau" style="--clr:#7A3E1D"
+                onclick="selectColor('#7A3E1D','Nâu truyền thống','nau')" title="Nâu Truyền Thống">
+                <div class="swatch-dot"></div><span>Nâu Truyền Thống</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="style-section">
+            <h3 class="section-sub-title">✦ Phong cách phối đồ</h3>
+            <div class="style-grid">
+              <div class="style-card" id="style-classic" onclick="selectStyle('Cổ điển thuần túy','classic')">
+                <div class="style-icon">👘</div>
+                <h4>Cổ Điển Thuần Túy</h4>
+                <p>Giữ nguyên vẻ đẹp truyền thống, không pha trộn</p>
+              </div>
+              <div class="style-card" id="style-modern" onclick="selectStyle('Hiện đại tối giản','modern')">
+                <div class="style-icon">✨</div>
+                <h4>Hiện Đại Tối Giản</h4>
+                <p>Đường nét sạch, màu trung tính, dáng chuẩn mới</p>
+              </div>
+              <div class="style-card" id="style-fusion" onclick="selectStyle('Fusion sáng tạo','fusion')">
+                <div class="style-icon">🌸</div>
+                <h4>Fusion Sáng Tạo</h4>
+                <p>Kết hợp truyền thống với thời trang đương đại</p>
+              </div>
+              <div class="style-card" id="style-royal" onclick="selectStyle('Hoàng gia lộng lẫy','royal')">
+                <div class="style-icon">👑</div>
+                <h4>Hoàng Gia Lộng Lẫy</h4>
+                <p>Thêu thùa tinh xảo, vàng son rực rỡ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Live Image Preview -->
+        <div class="step2-preview" id="step2ImagePreview" style="display:none">
+          <div class="preview-frame">
+            <img src="" alt="" class="preview-img" />
+            <div class="preview-caption"></div>
+            <div class="preview-hint">📸 Xem trước theo ảnh thực</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button class="btn-back" onclick="goToStep(1)">← Quay lại</button>
+        <button class="btn-next" id="nextStep2" onclick="goToStep(3)" style="display:none">Tiếp theo →</button>
+      </div>
+    </section>
+
+    <!-- ===== STEP 3: ACCESSORIES ===== -->
+    <section class="wizard-step" id="step3">
+      <div class="step-header">
+        <h2>Chọn phụ kiện đi kèm</h2>
+        <p>Hoàn thiện tổng thể trang phục với phụ kiện phù hợp</p>
+      </div>
+
+      <div class="accessories-grid" id="accessoriesContainer">
+        <!-- Populated by JS based on outfit selection -->
+      </div>
+
+      <div class="step-nav">
+        <button class="btn-back" onclick="goToStep(2)">← Quay lại</button>
+        <button class="btn-next" onclick="goToStep(4)">Xem kết quả →</button>
+      </div>
+    </section>
+
+    <!-- ===== STEP 4: RESULT ===== -->
+    <section class="wizard-step" id="step4">
+      <div class="step-header">
+        <h2>Bộ trang phục của bạn</h2>
+        <p>Tổng hợp lựa chọn – phong cách riêng mang hồn Việt</p>
+      </div>
+
+      <div class="result-layout">
+        <!-- Mockup Preview -->
+        <div class="result-mockup">
+          <div class="mockup-frame moodboard-style" id="moodboardFrame">
+            <!-- Background will be set via JS -->
+            <div class="moodboard-bg" id="moodboardBg"></div>
+
+            <!-- Moodboard background scene badge & quick switcher -->
+            <div class="moodboard-scene-bar" id="moodboardSceneBar">
+              <span class="scene-label" id="sceneLabel">🏯 Bối cảnh: Chùa Cổ & Lễ Hội</span>
+              <div class="scene-presets">
+                <button type="button" class="scene-preset-btn active" id="btn-scene-temple"
+                  onclick="setMoodboardBg('temple')" title="Chùa Cổ & Lễ Tết">🏯 Chùa</button>
+                <button type="button" class="scene-preset-btn" id="btn-scene-cafe" onclick="setMoodboardBg('cafe')"
+                  title="Quán Cà Phê Dạo Phố">☕ Cà phê</button>
+                <button type="button" class="scene-preset-btn" id="btn-scene-hoian" onclick="setMoodboardBg('hoian')"
+                  title="Phố Cổ Hoài Niệm">🏮 Phố cổ</button>
+                <button type="button" class="scene-preset-btn" id="btn-scene-palace" onclick="setMoodboardBg('palace')"
+                  title="Cung Đình Hoàng Gia">🏛️ Cung đình</button>
+              </div>
+            </div>
+
+            <div class="moodboard-main-item" id="mockupVisual">
+              <!-- Dynamically updated Central Image / SVG -->
+            </div>
+
+            <div class="moodboard-accessories-layer" id="moodboardAccessories">
+              <!-- Circular scattered accessory stickers -->
+            </div>
+
+            <div class="mockup-labels moodboard-labels" id="mockupLabels"></div>
+          </div>
+          <div class="mockup-actions">
+            <button class="action-btn" onclick="window.print()">🖨️ In / Lưu PDF</button>
+            <button class="action-btn" id="shareBtn" onclick="shareOutfit()">🔗 Chia sẻ</button>
+          </div>
+        </div>
+
+        <!-- Info & Suggestions -->
+        <div class="result-info">
+          <!-- Summary Card -->
+          <div class="summary-card" id="summaryCard">
+            <h3 id="summaryTitle">Trang phục của bạn</h3>
+            <div class="summary-row"><span class="lbl">Trang phục:</span><span id="summaryOutfit" class="val">–</span>
+            </div>
+            <div class="summary-row"><span class="lbl">Màu sắc:</span><span id="summaryColor" class="val">–</span></div>
+            <div class="summary-row"><span class="lbl">Phong cách:</span><span id="summaryStyle" class="val">–</span>
+            </div>
+            <div class="summary-row"><span class="lbl">Phụ kiện:</span><span id="summaryAcc" class="val">–</span></div>
+          </div>
+
+          <!-- Accessory Advice & Review Card -->
+          <div class="acc-review-card" id="accReviewCard">
+            <div class="acc-review-header">
+              <span class="acc-review-badge">💬 Nhận xét phối phụ kiện & Bối cảnh</span>
+            </div>
+            <h4 class="acc-review-title" id="accReviewTitle">Đánh giá phụ kiện</h4>
+            <div class="acc-review-list" id="accReviewList">
+              <!-- Dynamically populated with expert evaluation -->
+            </div>
+          </div>
+
+          <!-- Origin Info -->
+          <div class="origin-card" id="originCard">
+            <div class="origin-header">
+              <span class="origin-badge">📜 Nguồn gốc & Ý nghĩa</span>
+            </div>
+            <h4 id="originTitle">–</h4>
+            <p id="originText">Hãy chọn trang phục để xem thông tin nguồn gốc.</p>
+            <div class="origin-facts" id="originFacts"></div>
+          </div>
+
+          <!-- Suggestion Cards -->
+          <div class="suggestions-section">
+            <h3>💡 Gợi ý phối đồ tương tự</h3>
+            <div class="suggestion-cards" id="suggestionCards">
+              <!-- Dynamic suggestions -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BỘ SƯU TẬP / XEM THÊM ẢNH THỰC TẾ ===== -->
+      <div class="result-gallery-section" id="gallerySection">
+        <div class="gallery-section-head">
+          <div class="gallery-section-title-wrap">
+            <span class="gallery-badge">📸 Bộ Sưu Tập Thực Tế</span>
+            <h3 class="gallery-title">Xem thêm theo màu sắc & phong cách</h3>
+            <p class="gallery-subtitle">Bộ sưu tập ảnh thực tế đã được tuyển chọn theo từng sắc thái. Bấm vào ảnh bất kỳ
+              để áp dụng trực tiếp lên Bảng Moodboard!</p>
+          </div>
+        </div>
+        <div class="image-gallery-strip" id="imageGalleryStrip">
+          <!-- Dynamically populated real images -->
+        </div>
+      </div>
+
+      <button class="btn-restart" onclick="restart()">↺ Phối lại từ đầu</button>
+    </section>
+
+  </main>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-badge">✦ Sứ mệnh của chúng tôi ✦</div>
+      <h2>Gìn giữ hồn Việt<br /><span class="accent">trong thế giới hiện đại</span></h2>
+      <p>Việt Phục Remix ra đời với mong muốn đưa trang phục truyền thống Việt Nam đến gần hơn với thế hệ trẻ – không
+        phải bằng cách bảo tồn cứng nhắc, mà là hòa quyện linh hoạt giữa cái cũ và cái mới.</p>
+      <div class="about-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🎨</div>
+          <h4>Sáng tạo</h4>
+          <p>Phối đồ truyền thống theo hướng sáng tạo và cá nhân hóa</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">📚</div>
+          <h4>Giáo dục</h4>
+          <p>Tìm hiểu nguồn gốc và ý nghĩa văn hóa của từng trang phục</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🌺</div>
+          <h4>Tự hào</h4>
+          <p>Khơi dậy niềm tự hào về di sản thẩm mỹ Việt Nam</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-main">Việt Phục Remix</span>
+        <span class="logo-sub">Hồn cốt truyền thống, style hiện đại</span>
+      </div>
+      <p class="footer-copy">© 2026 Việt Phục Remix. Tự hào tôn vinh di sản Việt Nam.</p>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Image Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <img src="" id="lightboxImg" alt="Xem ảnh phóng to" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/mockups.js"></script>
+  <script src="js/advice.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
