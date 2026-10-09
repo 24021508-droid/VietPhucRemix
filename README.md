@@ -1,2 +1,2 @@
-# Vi-t-Ph-c-Remix
+#VietPhucRemix
 Bài thi Audition cho cuộc thi AI arena 2026
